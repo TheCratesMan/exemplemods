@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="StollR1405S_2.blend" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="7.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="Textur/AO1.dds" relativePath="true"/>
+    <File fileId="3" filename="Textur/AO1_Specular.dds" relativePath="true"/>
+    <File fileId="9" filename="Textur/AO2.dds" relativePath="true"/>
+    <File fileId="10" filename="Textur/AO2_Specular.dds" relativePath="true"/>
+    <File fileId="6" filename="Textur/Detail.dds" relativePath="true"/>
+    <File fileId="7" filename="Textur/Detail_Specular.dds" relativePath="true"/>
+    <File fileId="13" filename="Textur/corona_orange.dds" relativePath="true"/>
+    <File fileId="11" filename="Textur/corona_red.dds" relativePath="true"/>
+    <File fileId="12" filename="Textur/shaders/emissiveLightsShader.xml" relativePath="true"/>
+    <File fileId="4" filename="Textur/vehicleShader.xml" relativePath="true"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="AO1" materialId="11" ambientColor="1 1 1" cosPower="20" specularColor="1 1 1" customShaderId="4">
+      <Texture fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 20 20"/>
+    </Material>
+    <Material name="Material" materialId="8" diffuseColor="0.8 0.8 0.8 1" ambientColor="1 1 1">
+    </Material>
+    <Material name="Detail" materialId="13" ambientColor="1 1 1" cosPower="50" specularColor="1 1 1" alphaBlending="true">
+    </Material>
+    <Material name="coronaRed_mat" materialId="7" ambientColor="1 1 1" alphaBlending="true" customShaderId="12" customShaderVariation="BILLBOARD">
+      <Emissivemap fileId="11"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="AO2" materialId="10" ambientColor="1 1 1" cosPower="20" specularColor="1 1 1" customShaderId="4">
+      <Texture fileId="9"/>
+      <Glossmap fileId="10"/>
+      <CustomParameter name="RDT" value="1 1 20 20"/>
+    </Material>
+    <Material name="Zapfwelle" materialId="14" ambientColor="1 1 1" cosPower="20" specularColor="1 1 1">
+    </Material>
+    <Material name="coronaOrange_mat" materialId="12" ambientColor="1 1 1" alphaBlending="true" customShaderId="12" customShaderVariation="BILLBOARD_TURNLIGHT">
+      <Emissivemap fileId="13"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="Detail" materialId="15" ambientColor="1 1 1" cosPower="20" specularColor="1 1 1" customShaderId="4">
+      <Texture fileId="6"/>
+      <Glossmap fileId="7"/>
+      <CustomParameter name="RDT" value="1 0.47 20 20"/>
+    </Material>
+    <Material name="lambert1" materialId="16" diffuseColor="0.494118 0.494118 0.494118 1" ambientColor="1 1 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="StollR1405S.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape shapeId="1" name="Ackerschiene" translation="0 0 7.07095" rotation="17.069 -0 0" dynamic="true" compound="true" collisionMask="8194" density="20" solverIterationCount="20" clipDistance="300" nodeId="59" materialIds="8" nonRenderable="true">
+      <TransformGroup name="AttacherJoint" rotation="0 90 0" nodeId="60"/>
+      <Shape shapeId="2" name="Cube.001" rotation="5 0 0" nodeId="61" materialIds="11" castsShadows="true" receiveShadows="true"/>
+    </Shape>
+    <Shape shapeId="3" name="Deichsel" translation="0 0.628269 6.19417" rotation="38.743 -0 0" dynamic="true" compound="true" collisionMask="8194" density="9" solverIterationCount="20" clipDistance="300" nodeId="62" materialIds="8" nonRenderable="true">
+      <Shape shapeId="4" name="Body" rotation="-14.743 0 0" nodeId="63" materialIds="11,15" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="5" name="Standfuss" translation="0.101998 -0.07856 0.743084" rotation="-14.495 -10.7563 2.72227" nodeId="64" materialIds="11" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="Support_Ref" translation="0 -0.378909 -0.0134789" nodeId="65"/>
+      </Shape>
+      <TransformGroup name="Zylinder1" translation="0.00015 0.48323 0.15257" nodeId="66"/>
+      <TransformGroup name="JointDeichsel_Ackerschiene" translation="0.000154 0.046262 1.06587" rotation="-18 0 0" nodeId="67"/>
+      <TransformGroup name="Joint1.1_1" nodeId="68">
+        <TransformGroup name="Joint" nodeId="69"/>
+      </TransformGroup>
+      <TransformGroup name="Zylinder1" translation="0 -0.451374 0.853027" rotation="-14.743 0 0" nodeId="70">
+        <TransformGroup name="Zylinder1" nodeId="71"/>
+      </TransformGroup>
+    </Shape>
+    <Shape shapeId="6" name="Part1" translation="0 0.192 4.285" dynamic="true" compound="true" collisionMask="8194" density="0.8" solverIterationCount="20" clipDistance="300" nodeId="72" materialIds="8" nonRenderable="true">
+      <Shape shapeId="7" name="Kreisel1" translation="0 0.308 0.199" nodeId="73" materialIds="11,15" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="Aufhaengung1" nodeId="74">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="75">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="76" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="77" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung2" rotation="0 -30 0" nodeId="78">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="79">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="80" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="81" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung3" rotation="0 -60 0" nodeId="82">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="83">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="84" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="85" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung4" rotation="0 -90 0" nodeId="86">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="87">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="88" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="89" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung5" rotation="0 -120 0" nodeId="90">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="91">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="92" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="93" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung6" rotation="0 -150 0" nodeId="94">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="95">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="96" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="97" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung7" rotation="0 -180 0" nodeId="98">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="99">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="100" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="101" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung8" rotation="0 -210 0" nodeId="102">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="103">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="104" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="105" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung9" rotation="0 -240 0" nodeId="106">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="107">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="108" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="109" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung10" rotation="0 -270 0" nodeId="110">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="111">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="112" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="113" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung11" rotation="0 -300 0" nodeId="114">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="115">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="116" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="117" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung12" rotation="0 -330 0" nodeId="118">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="119">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="120" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="121" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="10" name="Body" nodeId="122" materialIds="11,15" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="11" name="SchutzVornLinks" translation="0.25 0.414065 0.985189" rotation="0 0 95" nodeId="123" materialIds="11,15" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="12" name="Schwadtuch1" translation="0.892353 -0.00245 -0.113249" rotation="0 19 0" nodeId="124" materialIds="11,15" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="13" name="SchutzVornRechts" translation="-0.251974 0.414065 0.98519" rotation="0 0 -95" nodeId="125" materialIds="11,15" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="14" name="Zylinder" translation="0 0.81595 1.73929" rotation="9.61076 -0 0" nodeId="126" materialIds="11" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="15" name="Zylinder.001" translation="0 0 0.609592" nodeId="127" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <TransformGroup name="ZylinderRef" translation="0 0.18928 0.01727" nodeId="128"/>
+      </Shape>
+      <TransformGroup name="wheel" translation="0.381847 -0.055375 -0.33463" nodeId="129"/>
+      <TransformGroup name="wheel" translation="-0.381846 -0.055375 -0.33463" nodeId="130"/>
+      <TransformGroup name="Joint1_Deichsel" translation="-0.000154 0.433555 1.91381" rotation="24 0 0" nodeId="131">
+        <TransformGroup name="Joint" nodeId="132"/>
+      </TransformGroup>
+      <TransformGroup name="LEER" nodeId="133"/>
+      <TransformGroup name="Joint1_2" translation="-0 0.728899 0.826375" nodeId="134"/>
+      <TransformGroup name="PTO" translation="3.71139e-09 0.498584 2.04945" rotation="0 180 0" nodeId="135"/>
+      <TransformGroup name="startIndex" translation="1.6 -7.10543e-17 1.5" nodeId="136"/>
+      <TransformGroup name="wightIndex" translation="-1.6 -7.10543e-17 1.5" nodeId="137"/>
+      <TransformGroup name="heightIndex" translation="1.5 -7.10543e-17 0.2" nodeId="138"/>
+      <TransformGroup name="startIndexDrop" translation="2 -7.10543e-17 0.832" nodeId="139"/>
+      <TransformGroup name="wightIndexDrop" translation="1.2 0.007 0.825" rotation="-0.373461 -0 0" nodeId="140"/>
+      <TransformGroup name="heightIndexDrop" translation="2 -7.10543e-17 -0.361" nodeId="141"/>
+      <TransformGroup name="PTO" translation="0 0.49858 2.00366" rotation="90 0 0" nodeId="142"/>
+      <Shape shapeId="16" name="Part1.001" translation="0 0.49858 2.00366" rotation="90 0 0" visibility="false" nodeId="143" materialIds="14" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="17" name="Part1" translation="-0 0.066802 -0" rotation="10.493 -0 0" nodeId="144" materialIds="14" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="18" name="Part2" translation="0 0.440838 1e-06" nodeId="145" materialIds="14" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="Part2.001" translation="0 0.5777 -0" rotation="34.1199 -0 0" nodeId="146" materialIds="14" castsShadows="true" receiveShadows="true">
+              <TransformGroup name="reference" translation="0 0.066802 -0" nodeId="147"/>
+            </Shape>
+            <Shape shapeId="20" name="Part2.002" nodeId="148" materialIds="13" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+        </Shape>
+      </Shape>
+      <Shape shapeId="21" name="emitter2" translation="-0.656157 0 1.434" rotation="0 -90 0" nodeId="149" materialIds="16" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+    </Shape>
+    <Shape shapeId="22" name="Part1.1" translation="0 0.198859 4.28392" rotation="-22 -0 0" dynamic="true" compound="true" collisionMask="8194" density="15" solverIterationCount="20" clipDistance="300" nodeId="150" materialIds="8" nonRenderable="true">
+      <Shape shapeId="23" name="Body" rotation="22 -1e-06 0" nodeId="151" materialIds="10,15" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="Joint" translation="0 0.04482 0.28335" nodeId="152"/>
+      </Shape>
+      <TransformGroup name="wheel" translation="-0.72055 -0.303624 0.605669" nodeId="153"/>
+      <TransformGroup name="wheel" translation="0.72055 -0.30362 0.60567" nodeId="154"/>
+      <TransformGroup name="Joint1.1_1" nodeId="155">
+        <TransformGroup name="Joint" nodeId="156"/>
+      </TransformGroup>
+      <Shape shapeId="24" name="Zylinder" translation="0 -0.0649958 0.283307" rotation="51.3155 -0 0" nodeId="157" materialIds="10" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="25" name="Zylinder3.001" translation="0 0 -0.308554" nodeId="158" materialIds="10" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+    </Shape>
+    <Shape shapeId="26" name="Part2" translation="0 0.925279 5.11154" dynamic="true" compound="true" collisionMask="8194" density="20" solverIterationCount="20" clipDistance="300" nodeId="159" materialIds="8" nonRenderable="true">
+      <Shape shapeId="27" name="Body" nodeId="160" materialIds="11" castsShadows="true" receiveShadows="true"/>
+      <TransformGroup name="Joint2_3" translation="0 0.013 -0.261112" nodeId="161"/>
+    </Shape>
+    <Shape shapeId="28" name="Part3" translation="0 0.936596 4.85009" dynamic="true" compound="true" collisionMask="8194" density="4.8" solverIterationCount="20" clipDistance="300" nodeId="162" materialIds="8" nonRenderable="true">
+      <Shape shapeId="29" name="Body" translation="-0 -0.058364 -3.81501" nodeId="163" materialIds="10,15" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="Joint" translation="-0.15177 -0.10002 0.22114" nodeId="164"/>
+      </Shape>
+      <TransformGroup name="Rechen" translation="0 -0.057826 -3.8145" nodeId="165">
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0142513 -0.041169 1.73" nodeId="166" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.041169 1.805" nodeId="167" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.041169 1.88" nodeId="168" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.04117 1.95857" nodeId="169" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.04117 2.03478" rotation="0 -0.920997 0" nodeId="170" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0154497 -0.04117 2.1094" rotation="0 -0.920997 0" nodeId="171" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0139154 -0.04117 2.18773" rotation="0 -0.920997 0" nodeId="172" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0151552 -0.04117 2.26485" rotation="0 -0.920997 0" nodeId="173" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0121567 -0.04117 2.34027" rotation="0 -0.920997 0" nodeId="174" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0134196 -0.04117 2.41883" rotation="0 -0.920997 0" nodeId="175" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0142002 -0.04117 2.49638" rotation="0 -0.920997 0" nodeId="176" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="30" name="Rechen.001" translation="-0.0139354 -0.04117 2.57306" rotation="0 -0.920997 0" nodeId="177" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="Rechen" translation="3.76535e-07 0 4.302" rotation="0 180 0" nodeId="178">
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0142513 -0.041169 1.73" nodeId="179" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.041169 1.805" nodeId="180" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.041169 1.88" nodeId="181" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.04117 1.95857" nodeId="182" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.01425 -0.04117 2.03478" rotation="0 -0.920997 0" nodeId="183" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0154497 -0.04117 2.1094" rotation="0 -0.920997 0" nodeId="184" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0139154 -0.04117 2.18773" rotation="0 -0.920997 0" nodeId="185" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0151552 -0.04117 2.26485" rotation="0 -0.920997 0" nodeId="186" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0121567 -0.04117 2.34027" rotation="0 -0.920997 0" nodeId="187" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0134196 -0.04117 2.41883" rotation="0 -0.920997 0" nodeId="188" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0142002 -0.04117 2.49638" rotation="0 -0.920997 0" nodeId="189" materialIds="11" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="30" name="Rechen.001" translation="-0.0139354 -0.04117 2.57306" rotation="0 -0.920997 0" nodeId="190" materialIds="11" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="Joint3_4" translation="-0 -0.058364 -3.81501" nodeId="191">
+        <TransformGroup name="Joint" nodeId="192"/>
+      </TransformGroup>
+    </Shape>
+    <Shape shapeId="31" name="Part4" translation="0 0.19537 0.435996" dynamic="true" compound="true" collisionMask="8194" density="0.5" solverIterationCount="20" clipDistance="300" nodeId="193" materialIds="8,10,15" nonRenderable="true">
+      <Shape shapeId="7" name="Kreisel2" translation="-0 0.308032 0.199014" nodeId="194" materialIds="11,15" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="Aufhaengung1" nodeId="195">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="196">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="197" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="198" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung2" rotation="0 -30 0" nodeId="199">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="200">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="201" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="202" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung3" rotation="0 -60 0" nodeId="203">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="204">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="205" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="206" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung4" rotation="0 -90 0" nodeId="207">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="208">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="209" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="210" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung5" rotation="0 -120 0" nodeId="211">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="212">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="213" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="214" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung6" rotation="0 -150 0" nodeId="215">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="216">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="217" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="218" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung7" rotation="0 -180 0" nodeId="219">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="220">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="221" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="222" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung8" rotation="0 -210 0" nodeId="223">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="224">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="225" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="226" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung9" rotation="0 -240 0" nodeId="227">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="228">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="229" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="230" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung10" rotation="0 -270 0" nodeId="231">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="232">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="233" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="234" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung11" rotation="0 -300 0" nodeId="235">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="236">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="237" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="238" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Aufhaengung12" rotation="0 -330 0" nodeId="239">
+          <TransformGroup name="Spike1" translation="0.58 0.002 -0.147" rotation="0 90 0" nodeId="240">
+            <Shape shapeId="8" name="Rechenaufhaengung.001" nodeId="241" materialIds="11" castsShadows="true" receiveShadows="true">
+              <Shape shapeId="9" name="Rechen.001" visibility="false" nodeId="242" materialIds="11" castsShadows="true" receiveShadows="true"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="32" name="Body" nodeId="243" materialIds="10,15" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="33" name="SchutzHintenLinks" translation="1.04185 0.479669 0.841" rotation="0 0 90" nodeId="244" materialIds="10" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="34" name="SchutzHintenRechts" translation="-1.04231 0.479669 0.840558" rotation="0 0 -90" nodeId="245" materialIds="10" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="35" name="Schwadtuchhalter" translation="0.16 0.509669 0.027487" rotation="0 -0 90" nodeId="246" materialIds="10" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="36" name="Schwadtuch2" translation="0.745244 -0.029943 0" nodeId="247" materialIds="10,15" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="37" name="Zylinder" translation="-0.152912 0.583547 0.491248" rotation="0 0.630003 0" nodeId="248" materialIds="10" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="ZylinderRef" translation="0 0.18928 0.01727" nodeId="249"/>
+      </Shape>
+      <TransformGroup name="wheel" translation="-0.38185 -0.055375 -0.333763" nodeId="250"/>
+      <TransformGroup name="wheel" translation="0.381847 -0.055375 -0.333764" nodeId="251"/>
+      <TransformGroup name="LEER" nodeId="252"/>
+      <TransformGroup name="startIndex" translation="1.6 -7.10543e-17 1.5" nodeId="253"/>
+      <TransformGroup name="wightIndex" translation="-1.6 -7.10543e-17 1.5" nodeId="254"/>
+      <TransformGroup name="heightIndex" translation="1.5 -7.10543e-17 0.2" nodeId="255"/>
+      <TransformGroup name="startIndexDrop" translation="2 -7.10543e-17 0.832" nodeId="256"/>
+      <TransformGroup name="wightIndexDrop" translation="1.2 0.00700391 0.824513" rotation="-0.373461 -0 0" nodeId="257"/>
+      <TransformGroup name="heightIndexDrop" translation="2 -7.10543e-17 -0.361311" nodeId="258"/>
+      <TransformGroup name="Joint4_3" translation="0 0.67883 0.59813" nodeId="259">
+        <TransformGroup name="Joint" nodeId="260">
+          <TransformGroup name="Joint" nodeId="261">
+            <Shape shapeId="38" name="Zylinder" translation="-0.15405 -0.09486 0.22594" nodeId="262" materialIds="10" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="Beleuchtung" nodeId="263">
+        <TransformGroup name="Beleuchtung" nodeId="264">
+          <Shape shapeId="39" name="coronaRed1" translation="1.00318 0.691315 -0.147" rotation="0 180 0" scale="1 0.8 1" clipDistance="200" nodeId="265" materialIds="7" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="39" name="coronaRed1" translation="-1.00318 0.691315 -0.147" rotation="0 180 0" scale="1 0.8 1" clipDistance="200" nodeId="266" materialIds="7" castsShadows="true" receiveShadows="true"/>
+          <Light name="backLightsHigh" translation="1.00207 0.742397 -0.15" rotation="-15 0 0" visibility="false" clipDistance="75" nodeId="267" type="spot" color="0.5 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2.5" coneAngle="110" dropOff="2">
+            <Light name="backLightsHigh1" translation="-2.00407 0 0" clipDistance="75" nodeId="268" type="spot" color="0.5 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2.5" coneAngle="110" dropOff="2"/>
+          </Light>
+        </TransformGroup>
+        <TransformGroup name="Blinker" nodeId="269">
+          <TransformGroup name="Links" nodeId="270">
+            <Shape shapeId="40" name="coronaOrange1" translation="1.00318 0.747167 -0.147" rotation="0 180 0" scale="0.9 0.7 1" clipDistance="200" nodeId="271" materialIds="12" castsShadows="true" receiveShadows="true"/>
+            <Light name="turnLightLeftBack" translation="1.00102 0.75 -0.15" rotation="-8 -5 0" visibility="false" clipDistance="75" nodeId="272" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4" coneAngle="140" dropOff="3"/>
+          </TransformGroup>
+          <TransformGroup name="Rechts" nodeId="273">
+            <Shape shapeId="40" name="coronaOrange1" translation="-1.00318 0.747167 -0.147" rotation="0 180 0" scale="0.9 0.7 1" clipDistance="200" nodeId="274" materialIds="12" castsShadows="true" receiveShadows="true"/>
+            <Light name="turnLightRightBack" translation="-1.00599 0.789426 -0.15" rotation="-8 5 0" visibility="false" clipDistance="75" nodeId="275" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4" coneAngle="140" dropOff="3"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="Bremsleuchten" nodeId="276">
+          <Shape shapeId="39" name="coronaRed1" translation="1.00318 0.691315 -0.147" rotation="0 180 0" clipDistance="200" nodeId="277" materialIds="7" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="39" name="coronaRed1" translation="-1.00318 0.691315 -0.147" rotation="0 180 0" clipDistance="200" nodeId="278" materialIds="7" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="21" name="emitter2" translation="-0.656157 0 1.43406" rotation="0 -90 0" nodeId="279" materialIds="16" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+    </Shape>
+    <Shape shapeId="22" name="Part4.1" translation="0 0.198178 0.44" rotation="-22 -0 0" dynamic="true" compound="true" collisionMask="8194" density="15" solverIterationCount="20" clipDistance="300" nodeId="280" materialIds="8" nonRenderable="true">
+      <Shape shapeId="23" name="Body" rotation="22 -1e-06 0" nodeId="281" materialIds="10,15" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="Joint" translation="0 0.04482 0.28335" nodeId="282"/>
+      </Shape>
+      <TransformGroup name="wheel" translation="-0.72055 -0.303624 0.605669" nodeId="283"/>
+      <TransformGroup name="wheel" translation="0.72055 -0.30362 0.60567" nodeId="284"/>
+      <TransformGroup name="Joint1.1_1" nodeId="285">
+        <TransformGroup name="Joint" nodeId="286"/>
+      </TransformGroup>
+      <Shape shapeId="24" name="Zylinder" translation="0 -0.065 0.28331" rotation="51.3155 0 0" nodeId="287" materialIds="10" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="25" name="Zylinder" translation="0 0 -0.30855" nodeId="288" materialIds="10" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+    </Shape>
+    <Shape shapeId="41" name="supportCol" translation="-7.90315e-09 0.168709 6.66622" rotation="0 0 90" dynamic="true" compound="true" collisionMask="8194" density="0.5" clipDistance="300" nodeId="289" materialIds="16" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+    <Camera name="camera" translation="4.38114 2.44215 7.272" rotation="-25.4412 55.5299 6.62324e-06" nodeId="290" fov="60" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+  </Scene>
+
+</i3D>
